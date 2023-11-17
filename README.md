@@ -27,7 +27,7 @@ made available to your awesome Avalonia UI projects!
 
 ### How to Use
 
-Install the latest HeroIcons.Avalonia Package from [Nuget]()
+Install the latest HeroIcons.Avalonia Package from [Nuget](https://www.nuget.org/packages/HeroIcons.Avalonia)
 
 **Basic Usage**
 
