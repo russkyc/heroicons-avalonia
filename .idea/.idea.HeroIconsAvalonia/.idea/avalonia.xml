@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="HeroIconsAvalonia/Controls/HeroIcon.axaml" value="IconLibraryDemo/IconLibraryDemo.csproj" />
+        <entry key="HeroIconsAvalonia/Controls/OutlineHeroIcon.axaml" value="IconLibraryDemo/IconLibraryDemo.csproj" />
+        <entry key="HeroIconsAvalonia/Controls/SolidHeroIcon.axaml" value="IconLibraryDemo/IconLibraryDemo.csproj" />
+        <entry key="HeroIconsAvalonia/HeroIcon.axaml" value="IconLibraryDemo/IconLibraryDemo.csproj" />
+        <entry key="HeroIconsAvalonia/HeroIcons/HeroIconsOutline.axaml" value="IconLibraryDemo/IconLibraryDemo.csproj" />
+        <entry key="HeroIconsAvalonia/HeroIcons/HeroIconsSolid.axaml" value="IconLibraryDemo/IconLibraryDemo.csproj" />
+        <entry key="IconLibraryDemo/App.axaml" value="IconLibraryDemo/IconLibraryDemo.csproj" />
+        <entry key="IconLibraryDemo/MainWindow.axaml" value="IconLibraryDemo/IconLibraryDemo.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroIconsAvalonia", "HeroIconsAvalonia\HeroIconsAvalonia.csproj", "{8FB29ECB-235C-47FA-9CBD-A8FB0619F975}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IconLibraryDemo", "IconLibraryDemo\IconLibraryDemo.csproj", "{345EB35E-73DB-4581-A150-B5FFE739A155}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FB29ECB-235C-47FA-9CBD-A8FB0619F975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FB29ECB-235C-47FA-9CBD-A8FB0619F975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FB29ECB-235C-47FA-9CBD-A8FB0619F975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FB29ECB-235C-47FA-9CBD-A8FB0619F975}.Release|Any CPU.Build.0 = Release|Any CPU
+		{345EB35E-73DB-4581-A150-B5FFE739A155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{345EB35E-73DB-4581-A150-B5FFE739A155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{345EB35E-73DB-4581-A150-B5FFE739A155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{345EB35E-73DB-4581-A150-B5FFE739A155}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

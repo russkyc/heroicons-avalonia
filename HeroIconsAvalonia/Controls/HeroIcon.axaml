@@ -1,0 +1,18 @@
+﻿<UserControl
+    x:Class="HeroIconsAvalonia.Controls.HeroIcon"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:HeroIconsAvalonia.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="avares://HeroIconsAvalonia/HeroIcons/HeroIconsOutline.axaml" />
+                <ResourceInclude Source="avares://HeroIconsAvalonia/HeroIcons/HeroIconsSolid.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Image Source="{Binding IconSource, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:HeroIcon}}" Stretch="Uniform" />
+</UserControl>
