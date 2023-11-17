@@ -62,10 +62,10 @@ public partial class HeroIcon : UserControl
         set => SetValue(IconSourceProperty, value);
     }
 
-    public static readonly StyledProperty<Enums.IconType> TypeProperty = AvaloniaProperty.Register<HeroIcon, Enums.IconType>(
+    public static readonly StyledProperty<IconType> TypeProperty = AvaloniaProperty.Register<HeroIcon, Enums.IconType>(
         "Type");
 
-    public Enums.IconType Type
+    public IconType Type
     {
         get => GetValue(TypeProperty);
         set
@@ -95,8 +95,8 @@ public partial class HeroIcon : UserControl
         set
         {
             SetValue(ForegroundProperty, value);
-            var resource = Resources.MergedDictionaries[(int)Kind] as ResourceDictionary;
-            resource!["Brush0"] = value;
+            Resources["Brush0"] = value;
+            Type = Type;
         }
     }
 }

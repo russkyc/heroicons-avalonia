@@ -8,6 +8,7 @@
     mc:Ignorable="d">
     <UserControl.Resources>
         <ResourceDictionary>
+            <SolidColorBrush x:Key="Brush0" Color="#000000" />
             <ResourceDictionary.MergedDictionaries>
                 <ResourceInclude Source="avares://HeroIconsAvalonia/HeroIcons/HeroIconsOutline.axaml" />
                 <ResourceInclude Source="avares://HeroIconsAvalonia/HeroIcons/HeroIconsSolid.axaml" />

@@ -4,10 +4,30 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <PackageIcon>icon.png</PackageIcon>
+        <Title>HeroIcons.Avalonia</Title>
+        <Authors>russkyc</Authors>
+        <Description>Hand crafted icons from the creators of Tailwind CSS made available to AvaloniaUI</Description>
+        <Copyright>russkyc</Copyright>
+        <PackageProjectUrl>https://github.com/russkyc/heroicons-avalonia</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/russkyc/heroicons-avalonia</RepositoryUrl>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>HeroIcons.Avalonia</PackageId>
+        <Version>1.0.2</Version>
     </PropertyGroup>
 
+    <PropertyGroup>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    </PropertyGroup>
+    
     <ItemGroup>
       <PackageReference Include="Avalonia" Version="11.0.5" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <None Remove="icon.png" />
+      <None Include="icon.png" Pack="true" PackagePath="" />
+      <Resource Include="icon.png" />
     </ItemGroup>
 
 </Project>
