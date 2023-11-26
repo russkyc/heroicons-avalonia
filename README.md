@@ -17,9 +17,8 @@
     </a>
 </p>
 
-<p style="text-align: justify">The [beautiful handcrafted Icons](https://www.heroicons.com) by the makers of Tailwind CSS
+The [beautiful handcrafted Icons](https://www.heroicons.com) by the makers of Tailwind CSS
 made available to your awesome Avalonia UI projects!
-</p>
 
 <h4 align="center">HeroIcons.Avalonia Demo App</h4>
 
