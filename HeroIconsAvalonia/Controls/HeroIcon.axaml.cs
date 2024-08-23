@@ -29,12 +29,25 @@ namespace HeroIconsAvalonia.Controls;
 
 public partial class HeroIcon : UserControl
 {
+    static HeroIcon()
+    {
+        TypeProperty.Changed.AddClassHandler<HeroIcon>((sender, args) => { sender.UpdateIcon(); });
+
+        KindProperty.Changed.AddClassHandler<HeroIcon>((sender, args) => { sender.UpdateIcon(); });
+    }
+
+    private void UpdateIcon()
+    {
+        var resource = Resources.MergedDictionaries[(int)Kind] as ResourceDictionary;
+        IconSource = resource![Type.ToString()];
+    }
+
     public HeroIcon()
     {
         SetSize(Min);
         InitializeComponent();
     }
-    
+
     public static readonly StyledProperty<bool> MinProperty = AvaloniaProperty.Register<HeroIcon, bool>(
         "Min");
 
@@ -47,7 +60,7 @@ public partial class HeroIcon : UserControl
             SetSize(value);
         }
     }
-    
+
     void SetSize(bool min)
     {
         Width = min ? 20 : 24;
@@ -56,24 +69,19 @@ public partial class HeroIcon : UserControl
 
     static readonly StyledProperty<object?> IconSourceProperty = AvaloniaProperty.Register<HeroIcon, object?>(
         "IconSource");
-    
+
     object? IconSource
     {
         set => SetValue(IconSourceProperty, value);
     }
 
-    public static readonly StyledProperty<IconType> TypeProperty = AvaloniaProperty.Register<HeroIcon, Enums.IconType>(
+    public static readonly StyledProperty<IconType> TypeProperty = AvaloniaProperty.Register<HeroIcon, IconType>(
         "Type");
 
     public IconType Type
     {
         get => GetValue(TypeProperty);
-        set
-        {
-            SetValue(TypeProperty, value);
-            var resource = Resources.MergedDictionaries[(int)Kind] as ResourceDictionary;
-            IconSource = resource![Type.ToString()];
-        }
+        set => SetValue(TypeProperty, value);
     }
 
     public static readonly StyledProperty<IconKind> KindProperty = AvaloniaProperty.Register<HeroIcon, IconKind>(
@@ -82,13 +90,9 @@ public partial class HeroIcon : UserControl
     public IconKind Kind
     {
         get => GetValue(KindProperty);
-        set
-        {
-            SetValue(KindProperty, value);
-            Type = Type;
-        }
+        set => SetValue(KindProperty, value);
     }
-    
+
     public new IBrush? Foreground
     {
         get => GetValue(ForegroundProperty);
@@ -96,7 +100,7 @@ public partial class HeroIcon : UserControl
         {
             SetValue(ForegroundProperty, value);
             Resources["Brush0"] = value;
-            Type = Type;
+            UpdateIcon();
         }
     }
 }
