@@ -39,6 +39,15 @@ public partial class HeroIcon : UserControl
         {
             sender.Resources["Brush0"] = sender.Foreground;
             sender.UpdateIcon();
+
+            // Force redraw of the DrawingImage.
+            // Needed because of bug described in: https://github.com/AvaloniaUI/Avalonia/issues/8767
+            if (sender.GetValue(IconSourceProperty) is DrawingImage di && di.Drawing != null)
+            {
+                var currentDrawing = di.Drawing;
+                di.Drawing = null;
+                di.Drawing = currentDrawing;
+            }
         });
     }
 
