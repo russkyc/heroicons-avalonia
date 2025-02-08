@@ -37,6 +37,7 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
         GetIcons();
+        PopulateBrushComboBox();
     }
 
     void GetIcons()
@@ -62,5 +63,29 @@ public partial class MainWindow : Window
             });
         }
     }
-        
+    void PopulateBrushComboBox()
+    {
+        var brushes = typeof(Brushes).GetProperties()
+                                .Select(p => p.Name)
+                                .ToList();
+        BrushComboBox.ItemsSource = brushes;
+        // set default brush as Black
+        BrushComboBox.SelectedItem = "Black";
+    }
+
+    private void BrushComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (BrushComboBox.SelectedItem is string brushName)
+        {
+            var brush = (IBrush)(typeof(Brushes).GetProperty(brushName)?.GetValue(null) ?? Brushes.Black);
+            if (brush != null)
+            {
+                foreach (var child in IconGrid.Children.OfType<HeroIcon>())
+                {
+                    child.Foreground = brush;
+                }
+            }
+        }
+    }
+
 }

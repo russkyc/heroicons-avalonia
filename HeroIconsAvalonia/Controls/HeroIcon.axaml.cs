@@ -34,6 +34,21 @@ public partial class HeroIcon : UserControl
         TypeProperty.Changed.AddClassHandler<HeroIcon>((sender, args) => { sender.UpdateIcon(); });
 
         KindProperty.Changed.AddClassHandler<HeroIcon>((sender, args) => { sender.UpdateIcon(); });
+
+        ForegroundProperty.Changed.AddClassHandler<HeroIcon>((sender, args) =>
+        {
+            sender.Resources["Brush0"] = sender.Foreground;
+            sender.UpdateIcon();
+
+            // Force redraw of the DrawingImage.
+            // Needed because of bug described in: https://github.com/AvaloniaUI/Avalonia/issues/8767
+            if (sender.GetValue(IconSourceProperty) is DrawingImage di && di.Drawing != null)
+            {
+                var currentDrawing = di.Drawing;
+                di.Drawing = null;
+                di.Drawing = currentDrawing;
+            }
+        });
     }
 
     private void UpdateIcon()
@@ -93,14 +108,18 @@ public partial class HeroIcon : UserControl
         set => SetValue(KindProperty, value);
     }
 
+    // Register Foreground as a StyledProperty to support bindings
+    public static new readonly StyledProperty<IBrush?> ForegroundProperty =
+        AvaloniaProperty.Register<HeroIcon, IBrush?>(
+            nameof(Foreground));
+
     public new IBrush? Foreground
     {
         get => GetValue(ForegroundProperty);
         set
         {
             SetValue(ForegroundProperty, value);
-            Resources["Brush0"] = value;
-            UpdateIcon();
+            // The property changed handler will handle updating Resources and the Icon
         }
     }
 }
