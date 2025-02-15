@@ -13,7 +13,8 @@
         <RepositoryUrl>https://github.com/russkyc/heroicons-avalonia</RepositoryUrl>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>HeroIcons.Avalonia</PackageId>
-        <Version>1.0.2</Version>
+        <Version>1.0.3</Version>
+        <PackageReleaseNotes>Fix icons ignoring foreground property. (Thanks MicBoucinha)</PackageReleaseNotes>
     </PropertyGroup>
 
     <PropertyGroup>
