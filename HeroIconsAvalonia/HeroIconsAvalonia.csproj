@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>netstandard2.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageIcon>icon.png</PackageIcon>
@@ -13,8 +13,9 @@
         <RepositoryUrl>https://github.com/russkyc/heroicons-avalonia</RepositoryUrl>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>HeroIcons.Avalonia</PackageId>
-        <Version>1.0.3</Version>
-        <PackageReleaseNotes>Fix icons ignoring foreground property. (Thanks MicBoucinha)</PackageReleaseNotes>
+        <Version>1.0.4</Version>
+        <PackageReleaseNotes>Migrate to .NET Standard 2.0, bump min avalonia version to 11.2.4</PackageReleaseNotes>
+        <LangVersion>10</LangVersion>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -22,7 +23,7 @@
     </PropertyGroup>
     
     <ItemGroup>
-      <PackageReference Include="Avalonia" Version="11.0.5" />
+      <PackageReference Include="Avalonia" Version="11.2.4" />
     </ItemGroup>
     
     <ItemGroup>
