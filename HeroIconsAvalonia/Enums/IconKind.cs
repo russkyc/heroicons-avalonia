@@ -20,10 +20,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-namespace HeroIconsAvalonia.Enums;
-
-public enum IconKind
+namespace HeroIconsAvalonia.Enums
 {
-    Outline,
-    Solid
+    public enum IconKind
+    {
+        Outline,
+        Solid
+    }
 }
