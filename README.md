@@ -3,18 +3,11 @@
 <h2 align="center">HeroIcons.Avalonia</h2>
 
 <p align="center">
-    <a href="https://www.nuget.org/packages/HeroIcons.Avalonia">
-        <img src="https://img.shields.io/nuget/v/HeroIcons.Avalonia?color=1f72de" alt="Nuget">
-    </a>
-    <a href="#">
-        <img src="https://img.shields.io/badge/-.NET%206.0-blueviolet?color=1f72de&label=NET" alt="">
-    </a>
-    <a href="#">
-        <img src="https://img.shields.io/badge/-.NET%207.0-blueviolet?color=1f72de&label=NET" alt="">
-    </a>
-    <a href="#">
-        <img src="https://img.shields.io/badge/-.NET%208.0-blueviolet?color=1f72de&label=NET" alt="">
-    </a>
+    <img src="https://img.shields.io/nuget/v/HeroIcons.Avalonia?color=1f72de" alt="Nuget">
+    <img src="https://img.shields.io/badge/-.NET%20Standard%202.0-blueviolet?color=1f72de&label=NET" alt="">
+    <img src="https://img.shields.io/github/license/russkyc/heroicons-avalonia">
+    <img src="https://img.shields.io/github/issues/russkyc/heroicons-avalonia">
+    <img src="https://img.shields.io/nuget/dt/HeroIcons.Avalonia">
 </p>
 
 The [beautiful handcrafted Icons](https://www.heroicons.com) by the makers of Tailwind CSS
