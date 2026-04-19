@@ -53,14 +53,27 @@ namespace HeroIconsAvalonia.Controls
 
         private void UpdateIcon()
         {
-            var resource = Resources.MergedDictionaries[(int)Kind] as ResourceDictionary;
-            IconSource = resource![Type.ToString()];
+            var dictionaryIndex = (int)Kind;
+            if (dictionaryIndex < 0 || dictionaryIndex >= Resources.MergedDictionaries.Count)
+            {
+                IconSource = null;
+                return;
+            }
+
+            var provider = Resources.MergedDictionaries[dictionaryIndex];
+            IconSource = provider.TryGetResource(Type.ToString(), ActualThemeVariant, out var icon)
+                ? icon
+                : null;
         }
 
         public HeroIcon()
         {
-            SetSize(Min);
             InitializeComponent();
+            SetSize(Min);
+
+            // Respect inherited/default foreground so icons are visible across light/dark themes.
+            Resources["Brush0"] = Foreground ?? Brushes.Black;
+            UpdateIcon();
         }
 
         public static readonly StyledProperty<bool> MinProperty = AvaloniaProperty.Register<HeroIcon, bool>(
@@ -82,12 +95,13 @@ namespace HeroIconsAvalonia.Controls
             Height = min ? 20 : 24;
         }
 
-        static readonly StyledProperty<object?> IconSourceProperty = AvaloniaProperty.Register<HeroIcon, object?>(
+        public static readonly StyledProperty<object?> IconSourceProperty = AvaloniaProperty.Register<HeroIcon, object?>(
             "IconSource");
 
-        object? IconSource
+        public object? IconSource
         {
-            set => SetValue(IconSourceProperty, value);
+            get => GetValue(IconSourceProperty);
+            private set => SetValue(IconSourceProperty, value);
         }
 
         public static readonly StyledProperty<IconType> TypeProperty = AvaloniaProperty.Register<HeroIcon, IconType>(
@@ -108,15 +122,5 @@ namespace HeroIconsAvalonia.Controls
             set => SetValue(KindProperty, value);
         }
 
-        // Register Foreground as a StyledProperty to support bindings
-        public static new readonly StyledProperty<IBrush?> ForegroundProperty =
-            AvaloniaProperty.Register<HeroIcon, IBrush?>(
-                nameof(Foreground));
-
-        public new IBrush? Foreground
-        {
-            get => GetValue(ForegroundProperty);
-            set => SetValue(ForegroundProperty, value);
-        }
     }
 }
