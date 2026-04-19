@@ -24,7 +24,6 @@ using System;
 using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Layout;
 using Avalonia.Media;
 using HeroIconsAvalonia.Enums;
 using HeroIconsAvalonia.Controls;
@@ -78,12 +77,9 @@ public partial class MainWindow : Window
         if (BrushComboBox.SelectedItem is string brushName)
         {
             var brush = (IBrush)(typeof(Brushes).GetProperty(brushName)?.GetValue(null) ?? Brushes.Black);
-            if (brush != null)
+            foreach (var child in IconGrid.Children.OfType<HeroIcon>())
             {
-                foreach (var child in IconGrid.Children.OfType<HeroIcon>())
-                {
-                    child.Foreground = brush;
-                }
+                child.Foreground = brush;
             }
         }
     }
